@@ -15,7 +15,7 @@
   width:400px;
   height:300px;
 }
-.start-button{
+.start-button,.replay-button{
   margin-top:20px;
   height:15%;
   width:30%;
@@ -34,7 +34,7 @@
   background-color:#3a5a40;
   font-size:20px;
 }
-.question-card{
+.main-page{
   background-color:#dad7cd;
   width:50%;
   height:auto;
@@ -62,3 +62,6 @@ li{
   color:#ffff;
   font-size:18px;
 }
+/* .final-result{
+
+} */
