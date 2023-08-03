@@ -34,3 +34,31 @@
   background-color:#3a5a40;
   font-size:20px;
 }
+.question-card{
+  background-color:#dad7cd;
+  width:50%;
+  height:auto;
+  border-radius: 16px;
+  text-align:center;
+  padding:10px;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-right:15px;
+}
+
+li{
+  background-color:#3a5a40;
+  padding:16px;
+  margin-top:8px;
+  width:70%;
+  text-align:center;
+  border:3px solid #fff;
+  border-radius:20px;
+  color:#ffff;
+  font-size:18px;
+}
