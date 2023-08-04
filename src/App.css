@@ -6,14 +6,16 @@
   justify-content: center;
   
 }
-.start{
+.start ,.final-result{
   background-color:#dad7cd;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width:400px;
-  height:300px;
+  height:auto;
+  padding:5px 5px 20px 5px;
+  text-align: center;
 }
 .start-button,.replay-button{
   margin-top:20px;
@@ -62,6 +64,3 @@ li{
   color:#ffff;
   font-size:18px;
 }
-/* .final-result{
-
-} */

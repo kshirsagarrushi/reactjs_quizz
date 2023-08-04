@@ -1,13 +1,18 @@
 import React from 'react'
+import { useLocation, useNavigate} from 'react-router-dom';
+import questions from '../Questions'
 
-function FinalResult({score,question}) {
+function FinalResult() {
+  
+  const location=useLocation();
+  const navigate=useNavigate();
     const getPopupTextAndLink = () => {
-        if (score === 5) {
+        if (location.state.score === 5) {
           return {
             text: 'Well done!',
             link: 'Click on this link to get the best offer from Upcloud Technology',
           };
-        } else if (score > 3 && score < 5) {
+        } else if (location.state.score > 3 && location.state.score < 5) {
           return {
             text: 'Very good!',
             link: 'Click on this link to get the best offer from Upcloud Technology',
@@ -20,14 +25,19 @@ function FinalResult({score,question}) {
         }
     };
     const{text,link}=getPopupTextAndLink();
+
+    function goToMain(){
+      navigate('/main');
+    }
+    
   return (
     <div className="final-result">
-      <h2>Score: {(score / question.length) * 100}%</h2>
+      <h2>Score: {(location.state.score / questions.length) * 100}%</h2>
       <h3>{text}</h3>
       {link?
         <h3>{link}</h3>
         :
-        <button className="replay-button" >Replay</button>
+        <button className="replay-button" onClick={goToMain} >Replay</button>
       }
     </div>
 
