@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function StartPage() {
     const navigate=useNavigate();
-    const [name,setName]=useState("");
+    const [name,setName]=useState('');
 
     function goToMain(){
         navigate('/main');
@@ -20,10 +20,12 @@ function StartPage() {
         onChange={(e)=>setName(e.target.value)}
         />
         {
-          name?
-          <button className="start-button" onClick={goToMain}>Start</button>
-          :<h3>Please Enter Your Name!!</h3>
-        }
+          name ?(
+          <button className="start-button" onClick={goToMain}
+          >Start</button>
+          ) : (
+            <h3>Please Enter Your Name!!</h3>
+        )}
     </div>
   )
 }

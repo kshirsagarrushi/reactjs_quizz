@@ -17,7 +17,7 @@
   padding:5px 5px 20px 5px;
   text-align: center;
 }
-.start-button,.replay-button{
+.start-button,.replay-button,.next-button{
   margin-top:20px;
   height:15%;
   width:30%;
@@ -25,6 +25,7 @@
   background-color:#3a5a40;
   color:#ffff;
   font-size:20px;
+  padding:5px 0px;
 }
 .input-name{
   height: 45px;
@@ -63,4 +64,20 @@ li{
   border-radius:20px;
   color:#ffff;
   font-size:18px;
+}
+
+.correct{
+  background-color: green;
+}
+
+.wrong{
+  background-color: red;
+}
+.result-text{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top:10px;
+}
+.link{
+  margin-top:0;
 }
