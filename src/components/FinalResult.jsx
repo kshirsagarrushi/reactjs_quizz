@@ -1,6 +1,5 @@
 import React from 'react'
 import { useLocation, useNavigate} from 'react-router-dom';
-import questions from '../Questions'
 
 function FinalResult() {
   

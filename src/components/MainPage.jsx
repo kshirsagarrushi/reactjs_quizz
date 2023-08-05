@@ -1,34 +1,32 @@
 import React, { useState, useEffect } from "react";
 import Questions from "../Questions";
 import { useNavigate } from "react-router-dom";
+
 function MainPage() {
   const [result, setResult] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [counter, setCounter] = useState(0);
   const [score, setScore] = useState(0);
-  const [selectedOption, setSelectedOption] = useState();
   const [remainingQuestionIndices, setRemainingQuestionIndices] = useState([]);
-  const [optionClass, setOptionClass] = useState("");
   const navigate = useNavigate();
 
-  // Initialize remainingQuestionIndices on component mount
+
   useEffect(() => {
     setRemainingQuestionIndices([...Array(Questions.length).keys()]);
   }, []);
 
-  function optionClicked(isCorrect, id) {
-    setSelectedOption(id);
-    setOptionClass(isCorrect ? "correct" : "wrong");
+  function optionClicked(isCorrect) {
     if (isCorrect) {
       setScore(score + 1);
     }
     if (counter + 1 < Questions.length && counter+1<5) {
-      // Remove the current question index from the remainingQuestionIndices
+     
       const updatedRemainingIndices = remainingQuestionIndices.filter(
         (index) => index !== currentQuestionIndex
       );
 
       if (updatedRemainingIndices.length > 0) {
+        
         const randomIndex =
           updatedRemainingIndices[
             Math.floor(Math.random() * updatedRemainingIndices.length)
@@ -36,7 +34,6 @@ function MainPage() {
         setCurrentQuestionIndex(randomIndex);
         setRemainingQuestionIndices(updatedRemainingIndices);
         setCounter(counter + 1);
-        // setSelectedOption(null);
       } else {
         setResult(true);
       }
@@ -64,8 +61,7 @@ function MainPage() {
                 return (
                   <li
                     key={option.id}
-                    onClick={() => optionClicked(option.isCorrect, option.id)}
-                    className={optionClass}
+                    onClick={() => optionClicked(option.isCorrect)}
                   >
                     {option.text}
                   </li>
